@@ -43,19 +43,33 @@ class MaquinaDeTuring:
                 cabezal -= 1
 
 transiciones = {
+    # q0: busca una 'a' sin marcar
     ("q0", "a"): ("q1", "X", "D"),
-    ("q0", "Y"): ("q3", "Y", "D"),
+    ("q0", "Y"): ("q0", "Y", "D"),  # salta Y ya marcadas
+    ("q0", "Z"): ("q3", "Z", "D"),  # no quedan a ni b, verificar c
+
+    # q1: busca la primera 'b' sin marcar
     ("q1", "a"): ("q1", "a", "D"),
-    ("q1", "b"): ("q2", "Y", "I"),
     ("q1", "Y"): ("q1", "Y", "D"),
-    ("q2", "a"): ("q2", "a", "I"),
-    ("q2", "X"): ("q0", "X", "D"),
-    ("q2", "Y"): ("q2", "Y", "I"),
-    ("q3", "Y"): ("q3", "Y", "D"),
-    ("q3", "B"): ("q4", "B", "I"),
+    ("q1", "b"): ("q2", "Y", "D"),
+
+    # q2: busca la primera 'c' sin marcar
+    ("q2", "b"): ("q2", "b", "D"),
+    ("q2", "Z"): ("q2", "Z", "D"),
+    ("q2", "c"): ("q4", "Z", "I"),
+
+    # q4: vuelve al inicio
+    ("q4", "a"): ("q4", "a", "I"),
+    ("q4", "b"): ("q4", "b", "I"),
+    ("q4", "Y"): ("q4", "Y", "I"),
+    ("q4", "Z"): ("q4", "Z", "I"),
+    ("q4", "X"): ("q0", "X", "D"),
+
+    # q3: verifica que no queden c sin marcar
+    ("q3", "Z"): ("q3", "Z", "D"),
+    ("q3", "B"): ("q5", "B", "I"),
 }
 
-mt = MaquinaDeTuring("q0", {"q4"}, transiciones)
+mt = MaquinaDeTuring("q0", {"q5"}, transiciones)
 
-mt.simular("aaab")
-            
+mt.simular("aabbcc")
