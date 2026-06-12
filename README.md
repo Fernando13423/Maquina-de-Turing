@@ -1,10 +1,10 @@
-# 🧠 Máquina de Turing
+#  Máquina de Turing
 
 Implementación de una **Máquina de Turing (MT)** en Python, con una interfaz gráfica para definir y ejecutar simulaciones paso a paso.
 
 ---
 
-## 📌 Descripción
+##  Descripción
 
 Una Máquina de Turing es el modelo computacional más simple capaz de definir el concepto de **computabilidad**. Está compuesta por:
 
@@ -18,7 +18,7 @@ Este proyecto simula su funcionamiento: dada una cadena de entrada y un conjunto
 
 ---
 
-## 📂 Archivos del proyecto
+## Archivos del proyecto
 
 | Archivo | Descripción |
 |---|---|
@@ -27,40 +27,3 @@ Este proyecto simula su funcionamiento: dada una cadena de entrada y un conjunto
 
 ---
 
-## ⚙️ Requisitos
-
-- Python 3.9 o superior
-- Tkinter (incluido por defecto en la mayoría de instalaciones de Python)
-
----
-
-## 🚀 Instalación
-
-\`\`\`bash
-git clone https://github.com/Fernando13423/Maquina-de-Turing.git
-cd Maquina-de-Turing
-\`\`\`
-
----
-
-## ▶️ Uso
-
-Ejecutar la interfaz gráfica:
-
-\`\`\`bash
-python interfaz.py
-\`\`\`
-
-Desde la interfaz se puede:
-
-- Definir o seleccionar una máquina de Turing (estados, alfabeto y transiciones).
-- Ingresar la cadena de entrada a evaluar.
-- Ejecutar la simulación paso a paso o de forma continua.
-- Visualizar el contenido de la cinta y el estado actual.
-- Obtener el resultado: cadena **aceptada** o **rechazada**.
-
----
-
-## 🔍 Cómo funciona
-
-- La cade
