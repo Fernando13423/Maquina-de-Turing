@@ -37,9 +37,9 @@ def presionar_boton():
     q0 = campo_q0.get().strip()
 
     # Leer estado final
-    final = campo_final.get().strip()
-    estados_finales = {final}
-
+    texto_finales = campo_final.get().strip()
+    estados_finales = {e.strip() for e in texto_finales.split(",")}
+    
     # Leer transciones 
     transiciones = {}
     texto = area_transiciones.get("1.0", tk.END).strip()
