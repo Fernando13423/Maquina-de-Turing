@@ -1,4 +1,4 @@
-# Maquina de Turing (MT)
+# Maquina de Turing 
 
 Implementación de una Máquina de Turing (MT) en Python, con una interfaz gráfica para definir y ejecutar simulaciones paso a paso.
 
