@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 
 from maquina_turing import MaquinaDeTuring
 
@@ -35,17 +36,29 @@ area_pasos.pack()
 def presionar_boton():
     # Leer estado inicial
     q0 = campo_q0.get().strip()
+    if not q0:
+        messagebox.showerror("Error", "Debes ingresar el estado inicial.")
+        return
 
     # Leer estado final
     texto_finales = campo_final.get().strip()
+    if not texto_finales:
+        messagebox.showerror("Error", "Debes ingresar al menos un estado final.")
+        return
+
     estados_finales = {e.strip() for e in texto_finales.split(",")}
     
     # Leer transciones 
     transiciones = {}
     texto = area_transiciones.get("1.0", tk.END).strip()
-    
+
+    if not texto:
+        messagebox.showerror("Error", "Debes ingresar al menos una transición.")
+        return
+        
     for linea in texto.splitlines():
         partes = linea.split(",")
+
         estado_actual, simbolo, nuevo_estado, nuevo_simbolo, direccion = partes
         transiciones[(estado_actual.strip(), simbolo.strip())] = (
             nuevo_estado.strip(), nuevo_simbolo.strip(), direccion.strip()
