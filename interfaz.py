@@ -13,35 +13,35 @@ ROJO    = "#c0392b"
 ventana = tk.Tk()
 ventana.title("Simulador MT")
 ventana.configure(bg=FONDO)
-tk.Label(ventana, text="Estado inicial:", bg=FONDO, fg=TEXTO).pack()
+tk.Label(ventana, text="Estado inicial:", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
 
 # campos para ingresar el estado inicial y el estado final, y las transiciones
 campo_q0 = tk.Entry(ventana, bg=PANEL, fg=TEXTO)
-campo_q0.pack()
+campo_q0.pack(pady=(0, 10))
 
-tk.Label(ventana, text="Estado final:", bg=FONDO, fg=TEXTO).pack()
+tk.Label(ventana, text="Estado final:", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
 campo_final = tk.Entry(ventana, bg=PANEL, fg=TEXTO)
-campo_final.pack()
+campo_final.pack(pady=(0, 10))
 
-tk.Label(ventana, text="Transiciones (una por línea: q0,a,q1,X,D):", bg=FONDO, fg=TEXTO).pack()
+tk.Label(ventana, text="Transiciones (una por línea: q0,a,q1,X,D):", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
 area_transiciones = tk.Text(ventana, height=10, width=60, bg=PANEL, fg=TEXTO)
-area_transiciones.pack()
+area_transiciones.pack(pady=(0, 15))
 
 # ingresar la palabra a simular en la MT
 etiqueta = tk.Label(ventana, text="Palabra:", bg=FONDO, fg=TEXTO)
-etiqueta.pack()
+etiqueta.pack(pady=(10, 2))
 
 # campo para ingresar la palabra a simular en la MT
 campo = tk.Entry(ventana, bg=PANEL, fg=TEXTO)
-campo.pack()
+campo.pack(pady=(0, 10))
 
 # etiqueta para mostrar el resultado de la simulacio, si la palabra es aceptada o rechazada
 resultado_label = tk.Label(ventana, text="", bg=FONDO, fg=TEXTO)
-resultado_label.pack()
+resultado_label.pack(pady=(10, 2))
 
 # Area de texto para mostrar las descripciones instantaneas de cada paso de la simulacion 
 area_pasos = tk.Text(ventana, height=20, width=60, bg=PANEL, fg=TEXTO)
-area_pasos.pack()
+area_pasos.pack(pady=(0, 15))
 
 
 #funcion que se ejecuta al presionar el boton, lee los datos de la interfaz, crea la MT y simula la palabra ingresada, mostrando el resultado.
@@ -107,6 +107,6 @@ def presionar_boton():
 
 
 boton = tk.Button(ventana, text="Mostrar", command=presionar_boton, bg=ACENTO, fg="white" )
-boton.pack()
+boton.pack(pady=(5, 15))
 
 ventana.mainloop()
