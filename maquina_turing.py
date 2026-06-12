@@ -17,6 +17,10 @@ class MaquinaDeTuring:
 
             pasos.append("Cinta: " + "".join(cinta) + "  estado: " + estado)
 
+            #izquierda = "".join(cinta[:cabezal])
+            #derecha   = "".join(cinta[cabezal:])
+            #pasos.append(izquierda + " " + estado + " " + derecha)
+
             if estado in self.estados_finales:
                 return True, pasos
 
