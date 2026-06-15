@@ -23,7 +23,7 @@ tk.Label(ventana, text="Estado(s) final(es) (separados por coma):", bg=FONDO, fg
 campo_final = tk.Entry(ventana, bg=PANEL, fg=TEXTO)
 campo_final.pack(pady=(0, 10))
 
-tk.Label(ventana, text="Transiciones (una por línea: q0,a,q1,X,D):", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
+tk.Label(ventana, text="Transiciones (Una por línea, Ej: q0,a,q1,X,D):", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
 area_transiciones = tk.Text(ventana, height=10, width=60, bg=PANEL, fg=TEXTO)
 area_transiciones.pack(pady=(0, 15))
 
@@ -40,6 +40,7 @@ resultado_label = tk.Label(ventana, text="", bg=FONDO, fg=TEXTO)
 resultado_label.pack(pady=(10, 2))
 
 # Area de texto para mostrar las descripciones instantaneas de cada paso de la simulacion
+tk.Label(ventana, text="Descripciones instantáneas:", bg=FONDO, fg=TEXTO).pack(pady=(10, 2))
 area_pasos = tk.Text(ventana, height=20, width=60, bg=PANEL, fg=TEXTO)
 area_pasos.pack(pady=(0, 15))
 
@@ -117,7 +118,7 @@ def presionar_boton():
         area_pasos.insert(tk.END, paso + "\n")
 
 
-boton = tk.Button(ventana, text="Mostrar", command=presionar_boton, bg=ACENTO, fg="white")
+boton = tk.Button(ventana, text="Simular", command=presionar_boton, bg=ACENTO, fg="white")
 boton.pack(pady=(5, 15))
 
 ventana.mainloop()
