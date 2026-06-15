@@ -1,6 +1,8 @@
 #  Máquina de Turing
-
 Implementación de una **Máquina de Turing (MT)** en Python, con una interfaz gráfica para definir y ejecutar simulaciones paso a paso.
+
+PARA EJECUTAR EN WINDOWS: py interfaz.py
+PARA EJECUTAR EN LINUX: python3 interfaz.py
 
 ---
 
